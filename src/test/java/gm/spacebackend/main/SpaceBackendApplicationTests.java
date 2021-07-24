@@ -1,10 +1,10 @@
-package com.example.spacebackend;
+package gm.spacebackend.main;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DemoApplicationTests {
+class SpaceBackendApplicationTests {
 
 	@Test
 	void contextLoads() {

@@ -8,11 +8,11 @@
 		<version>2.5.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.example</groupId>
+	<groupId>gm.spacebackend</groupId>
 	<artifactId>spacebackend</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>demo</name>
-	<description>Demo project for Spring Boot</description>
+	<name>spacebackend</name>
+	<description>Rolling in space Backend</description>
 	<properties>
 		<java.version>16</java.version>
 	</properties>
