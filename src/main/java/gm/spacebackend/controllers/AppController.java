@@ -1,5 +1,6 @@
 package gm.spacebackend.controllers;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,5 +34,19 @@ public class AppController {
     	if (consumable.isEmpty()) 
     		return ResponseEntity.notFound().build();
     	return ResponseEntity.ok(consumable.get());
+    }
+    
+    @GetMapping("/c")
+    @ResponseBody
+    public ResponseEntity<List<SmallConsumable>> getConsumable() {
+    	List<SmallConsumable> consumables = consumableService.getAll();
+    	return ResponseEntity.ok(consumables);
+    }
+    
+    @GetMapping("/count")
+    @ResponseBody
+    public ResponseEntity<Long> count() {
+    	Long count = consumableService.count();
+    	return ResponseEntity.ok(count);
     }
 }

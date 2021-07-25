@@ -1,5 +1,6 @@
 package gm.spacebackend.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,5 +15,7 @@ public interface ConsumableService {
 	public Optional<SmallConsumable> getConsumable(Long name);
 	
 	public long count();
-}
+	
+	public List<SmallConsumable> getAll();
+ }
 

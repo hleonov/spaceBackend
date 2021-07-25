@@ -1,5 +1,6 @@
 package gm.spacebackend.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,10 @@ public class ConsumableServiceImpl implements ConsumableService {
 	@Override
 	public long count() {
 		return repository.count();
+	}
+	@Override
+	public List<SmallConsumable> getAll() {
+		return repository.findAll();
 	}
 
 }
