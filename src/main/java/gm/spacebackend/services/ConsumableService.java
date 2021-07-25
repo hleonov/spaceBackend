@@ -3,19 +3,14 @@ package gm.spacebackend.services;
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
-
-import gm.spacebackend.model.SmallConsumable;
-import gm.spacebackend.repos.SmallConsumablesRepository;
+import gm.spacebackend.model.CharacterConsumables;
 
 
 public interface ConsumableService {
-	public Optional<SmallConsumable> getConsumable(Long name);
+	public Optional<CharacterConsumables> getConsumable(Long name);
 	
 	public long count();
 	
-	public List<SmallConsumable> getAll();
+	public List<CharacterConsumables> getAll();
  }
 

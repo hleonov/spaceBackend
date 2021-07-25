@@ -4,19 +4,18 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-import gm.spacebackend.model.SmallConsumable;
-import gm.spacebackend.repos.SmallConsumablesRepository;
+import gm.spacebackend.model.CharacterConsumables;
+import gm.spacebackend.repos.CharConsumablesRepository;
 
-@Component
+@Service
 public class ConsumableServiceImpl implements ConsumableService {
 	@Autowired
-	SmallConsumablesRepository<?> repository;
+	CharConsumablesRepository<?> repository;
 	
 	@Override
-	public Optional<SmallConsumable> getConsumable(Long id) {
+	public Optional<CharacterConsumables> getConsumable(Long id) {
 		return repository.findById(id);
 	}
 	@Override
@@ -24,7 +23,7 @@ public class ConsumableServiceImpl implements ConsumableService {
 		return repository.count();
 	}
 	@Override
-	public List<SmallConsumable> getAll() {
+	public List<CharacterConsumables> getAll() {
 		return repository.findAll();
 	}
 

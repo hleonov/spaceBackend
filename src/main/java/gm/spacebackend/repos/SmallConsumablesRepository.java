@@ -4,7 +4,6 @@ import org.springframework.stereotype.Component;
 
 import gm.spacebackend.model.SmallConsumable;
 
-//@Component
 public interface SmallConsumablesRepository<S> extends JpaRepository<SmallConsumable, Long> {
 	
 	SmallConsumable findById(long id);
