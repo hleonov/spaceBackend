@@ -5,10 +5,10 @@ import javax.persistence.*;
 @Table(name = "CharacterConsumables")
 public class CharacterConsumables {
 
-	@Id
     @GeneratedValue
     private Long id;
 	
+	@Id
 	@Column(name="name", nullable = false)
 	private String name;
 

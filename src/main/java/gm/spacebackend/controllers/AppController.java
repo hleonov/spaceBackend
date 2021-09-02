@@ -21,7 +21,7 @@ public class AppController {
     
     @GetMapping("/c/{id}")
     @ResponseBody
-    public ResponseEntity<CharacterConsumables> getConsumable(@PathVariable Long id) {
+    public ResponseEntity<CharacterConsumables> getConsumable(@PathVariable String id) {
     	Optional<CharacterConsumables> consumable = consumableService.getConsumable(id);
     	if (consumable.isEmpty()) 
     		return ResponseEntity.notFound().build();
