@@ -30,8 +30,8 @@ public class ConsumablesController {
     	consumableService.save(dto);
     }
     
-    @MessageMapping("/hello")
-    @SendTo("/topic/hi")
+    @MessageMapping("/stats")
+    @SendTo("/topic/consume_stats")
     public StatsDto statsChanged(StatsDto dto) {
     	System.out.println("hit statsChanged backend");
     	return dto;
