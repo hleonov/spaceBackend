@@ -7,4 +7,5 @@ public class RollInfoDto {
 	public String pcTactic;
 	public String gmTactic;
 	public int rollResult;
+	public boolean exposeGMTactic;
 }
