@@ -8,6 +8,7 @@ import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.messaging.simp.annotation.SubscribeMapping;
 import org.springframework.stereotype.Controller;
 
+import gm.spacebackend.dto.RollInfoDto;
 import gm.spacebackend.dto.StatsDto;
 import gm.spacebackend.model.CharacterConsumables;
 import gm.spacebackend.services.ConsumableService;
@@ -32,7 +33,14 @@ public class ConsumablesController {
     @MessageMapping("/hello")
     @SendTo("/topic/hi")
     public StatsDto statsChanged(StatsDto dto) {
-    	System.out.println("hit backend");
+    	System.out.println("hit statsChanged backend");
+    	return dto;
+    }
+    
+    @MessageMapping("/roll")
+    @SendTo("/topic/consume_roll")
+    public RollInfoDto rollInfoChanged(RollInfoDto dto) {
+    	System.out.println("hit rollInfoChanged backend "+dto.name);
     	return dto;
     }
 
