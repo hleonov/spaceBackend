@@ -37,11 +37,4 @@ public class ConsumablesController {
     	return dto;
     }
     
-    @MessageMapping("/roll")
-    @SendTo("/topic/consume_roll")
-    public RollInfoDto rollInfoChanged(RollInfoDto dto) {
-    	System.out.println("hit rollInfoChanged backend "+dto.name);
-    	return dto;
-    }
-
 }
