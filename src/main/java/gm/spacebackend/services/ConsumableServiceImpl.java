@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 
 import gm.spacebackend.dto.StatsDto;
 import gm.spacebackend.model.CharacterConsumables;
+import gm.spacebackend.model.ConsumablesMapper;
+import gm.spacebackend.model.IConsumablesMapper;
 import gm.spacebackend.repos.CharConsumablesRepository;
 
 @Service
@@ -30,10 +32,11 @@ public class ConsumableServiceImpl implements ConsumableService {
 	@Override
 	public void save(StatsDto inputDto) {
 		Optional<CharacterConsumables> charCons = repository.findById(inputDto.name);
-		if (charCons.isEmpty())
+		IConsumablesMapper mapper = new ConsumablesMapper();
+		CharacterConsumables entity = mapper.map(inputDto);
+		if (charCons.isEmpty() || entity == null)
 			return;
-		//charCons.get().setTimesRested(inputDto.rested);
-		repository.save(charCons.get());
+		repository.save(entity);
 	}
 
 }

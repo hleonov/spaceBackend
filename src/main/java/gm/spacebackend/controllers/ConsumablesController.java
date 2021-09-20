@@ -34,6 +34,7 @@ public class ConsumablesController {
     @SendTo("/topic/consume_stats")
     public StatsDto statsChanged(StatsDto dto) {
     	System.out.println("hit statsChanged backend");
+    	consumableService.save(dto);
     	return dto;
     }
     
