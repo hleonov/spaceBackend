@@ -1,4 +1,5 @@
 package gm.spacebackend.repos;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -9,5 +10,6 @@ public interface CharConsumablesRepository<S> extends JpaRepository<CharacterCon
 	
 	Optional<CharacterConsumables> findById(String id);
 	
+	List<CharacterConsumables> findAll();
 	
 }

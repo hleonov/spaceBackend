@@ -17,7 +17,10 @@ public class DataLoader implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-         LoadUsers();
+    	if (this.chrRepo.findAll().isEmpty()) {
+        	System.out.println("INIT **** Empty! Loading new Data!");
+    		LoadUsers();
+    	}
     }
 
     private void LoadUsers() {
