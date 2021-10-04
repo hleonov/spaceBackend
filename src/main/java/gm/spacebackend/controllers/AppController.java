@@ -21,7 +21,7 @@ import gm.spacebackend.repos.CharConsumablesRepository;
 import gm.spacebackend.services.ConsumableService;
 
 @RestController
-@CrossOrigin(origins = "https://rollinginspace-27b87.web.app")
+@CrossOrigin(origins = "*")
 public class AppController {
 	
 	@Autowired
