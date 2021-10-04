@@ -7,6 +7,7 @@ import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.messaging.simp.annotation.SubscribeMapping;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import gm.spacebackend.dto.RollInfoDto;
 import gm.spacebackend.dto.StatsDto;
@@ -23,11 +24,6 @@ public class ConsumablesController {
     @SubscribeMapping("/c/get")
     public List<CharacterConsumables> findAll() {
         return consumableService.getAll();
-    }
-    
-    @MessageMapping("/c/create")
-    public void save(StatsDto dto) {
-    	consumableService.save(dto);
     }
     
     @MessageMapping("/stats")

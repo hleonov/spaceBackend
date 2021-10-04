@@ -15,5 +15,7 @@ public interface ConsumableService {
 	public List<CharacterConsumables> getAll();
 	
 	public void save(StatsDto inputDto);
+	
+	public void save(CharacterConsumables charConsumables);
  }
 

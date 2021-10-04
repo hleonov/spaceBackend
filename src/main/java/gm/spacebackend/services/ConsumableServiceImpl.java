@@ -38,5 +38,10 @@ public class ConsumableServiceImpl implements ConsumableService {
 			return;
 		repository.save(entity);
 	}
+	
+	@Override
+	public void save(CharacterConsumables charConsumables) {
+		repository.save(charConsumables);
+	}
 
 }

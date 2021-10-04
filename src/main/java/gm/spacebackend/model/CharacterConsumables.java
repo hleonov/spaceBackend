@@ -5,6 +5,8 @@ import javax.persistence.*;
 @Table(name = "CharacterConsumables")
 public class CharacterConsumables {
 
+	private static final int DEFAULT_STAT = 10;
+
     @GeneratedValue
     private Long id;
 	
@@ -63,6 +65,11 @@ public class CharacterConsumables {
 		this.timesRested = 0;
 	}
 
+	public CharacterConsumables(String name) {
+		this(name, new Consumable(DEFAULT_STAT), new Consumable(DEFAULT_STAT), new Consumable(DEFAULT_STAT),
+				new Consumable(DEFAULT_STAT), new Consumable(DEFAULT_STAT));
+	}
+	
 	public String getName() {
 		return name;
 	}
