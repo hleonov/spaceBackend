@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,6 +21,7 @@ import gm.spacebackend.repos.CharConsumablesRepository;
 import gm.spacebackend.services.ConsumableService;
 
 @RestController
+@CrossOrigin(origins = "https://rollinginspace-27b87.web.app")
 public class AppController {
 	
 	@Autowired
