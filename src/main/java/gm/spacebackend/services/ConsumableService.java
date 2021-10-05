@@ -17,5 +17,7 @@ public interface ConsumableService {
 	public void save(StatsDto inputDto);
 	
 	public void save(CharacterConsumables charConsumables);
+
+	void deleteById(String id);
  }
 

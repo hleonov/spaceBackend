@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -41,6 +42,12 @@ public class AppController {
     public ResponseEntity<List<CharacterConsumables>> getConsumable() {
     	List<CharacterConsumables> consumables = consumableService.getAll();
     	return ResponseEntity.ok(consumables);
+    }
+    
+    @DeleteMapping("/c/delete/{id}")
+    @ResponseBody
+    public void deleteCharacter(@PathVariable String id) {
+    	consumableService.deleteById(id);
     }
     
     @PostMapping("/c/create")

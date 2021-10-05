@@ -44,4 +44,12 @@ public class ConsumableServiceImpl implements ConsumableService {
 		repository.save(charConsumables);
 	}
 
+	@Override
+	public void deleteById(String id) {
+		try {
+			repository.deleteById(id);
+		} catch(IllegalArgumentException e) {
+			System.out.println("No such character to delete: "+id);
+		}
+	}
 }
