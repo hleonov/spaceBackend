@@ -5,6 +5,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;
+import org.springframework.scheduling.concurrent.DefaultManagedTaskScheduler;
 import org.springframework.web.socket.config.annotation.EnableWebSocketMessageBroker;
 import org.springframework.web.socket.config.annotation.StompEndpointRegistry;
 import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerConfigurer;
@@ -22,7 +23,9 @@ public class WebSocketConfiguration implements WebSocketMessageBrokerConfigurer 
 
     @Override
     public void configureMessageBroker(MessageBrokerRegistry registry) {
-        registry.enableSimpleBroker(properties.getTopicPrefix());
+        registry.enableSimpleBroker(properties.getTopicPrefix())
+        	.setTaskScheduler(new DefaultManagedTaskScheduler())
+        	.setHeartbeatValue(new long[] {5000, 5000});
         registry.setApplicationDestinationPrefixes(properties.getApplicationPrefix());
     }
 
